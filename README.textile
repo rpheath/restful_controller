@@ -14,7 +14,7 @@ end
 *Notes:*
 
 * by default the model will be the singularized version of the controller (ArticlesController => Article)
-* automatically sets the expected instance variable for your views depending on the action being rendered. For articles example, the "show" action would setup an @article@ variable, while the "index" action would setup an @articles@ variable, as you'd expect)
+* automatically sets the expected instance variable for your views depending on the action being rendered. For articles example, the "show" action would setup an @@article@ variable, while the "index" action would setup an @@articles@ variable, as you'd expect)
 * "supports pagination" means a #paginated(params[:page]) method will be called on your model (you may need to add that)
 
 h3. Nothing New
