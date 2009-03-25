@@ -3,7 +3,7 @@ h1. RestfulController
 This is a very bare bones abstraction of the RESTful actions for a Rails resource controller. Nothing fancy. Supports pagination (for the index action, mainly) and custom Models (that don't match the typical pattern - think of a SignupsController using a User model).
 
 <pre><code>class ArticlesController < ApplicationController
-  restful_controller :pagination => true, :model => Post
+  restful_controller :model => Post, :pagination => true
 end
 </code></pre>
 
