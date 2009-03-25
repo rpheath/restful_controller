@@ -1,0 +1,26 @@
+h1. RestfulController
+
+This is a very bare bones abstraction of the RESTful actions for a Rails resource controller. Nothing fancy. Supports pagination (for the index action, mainly) and custom Models (that don't match the typical pattern - think of a SignupsController using a User model).
+
+<pre><code>class ArticlesController < ApplicationController
+  restful_controller :pagination => true, :model => Post
+end
+
+class ArticlesController < ApplicationController
+  restful_controller :model => Post
+end
+</code></pre>
+
+*Notes:*
+
+* by default the model will be the singularized version of the controller (ArticlesController => Article)
+* automatically sets the expected instance variable for your views depending on the action being rendered. For articles example, the "show" action would setup an @article@ variable, while the "index" action would setup an @articles@ variable, as you'd expect)
+* "supports pagination" means a #paginated(params[:page]) method will be called on your model (you may need to add that)
+
+h3. Nothing New
+  
+I'm aware that there are several solutions to this problem, but I didn't want/need all of the features from that of resource_controller and friends. This plugin is very straight-forward and is primarily used for a few applications at work.
+
+h3. License
+
+Copyright (c) 2009 Ryan Heath, released under the MIT license
