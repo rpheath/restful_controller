@@ -5,10 +5,6 @@ This is a very bare bones abstraction of the RESTful actions for a Rails resourc
 <pre><code>class ArticlesController < ApplicationController
   restful_controller :pagination => true, :model => Post
 end
-
-class ArticlesController < ApplicationController
-  restful_controller :model => Post
-end
 </code></pre>
 
 *Notes:*
