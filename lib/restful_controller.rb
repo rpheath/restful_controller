@@ -78,7 +78,7 @@ module RPH
         end
         
         def handle_redirect!
-          redirect_to (params[:continue] ? send("new_#{resource_name}_path"): send("#{resource_name.pluralize}_path"))
+          redirect_to (params[:continue] ? request.referrer : send("#{resource_name.pluralize}_path"))
         end
         
         def set_resource_to(value)
