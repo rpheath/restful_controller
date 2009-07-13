@@ -70,11 +70,11 @@ module RPH
         end
         
         def resource_name
-          model.to_s.downcase.singularize
+          model.to_s.underscore.singularize
         end
         
         def resource_params
-          params[model.to_s.downcase.singularize.to_sym]
+          params[model.to_s.underscore.singularize.to_sym]
         end
         
         def handle_redirect!
